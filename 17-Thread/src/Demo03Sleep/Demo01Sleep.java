@@ -6,6 +6,8 @@ public class Demo01Sleep {
             System.out.println(i);
             try {
                 Thread.sleep(1000);
+                Thread.currentThread().setName("Main");
+                System.out.println(Thread.currentThread().getName());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

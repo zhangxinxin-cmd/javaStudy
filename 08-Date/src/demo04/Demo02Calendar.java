@@ -1,5 +1,6 @@
 package demo04;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -25,6 +26,9 @@ public class Demo02Calendar {
 //        demo02();
 //        demo03();
 //        demo04();
+        LocalDate date= LocalDate.now();
+        LocalDate localDate = date.minusDays(3);
+
     }
 
     private static void demo04() {

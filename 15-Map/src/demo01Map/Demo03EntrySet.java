@@ -23,7 +23,6 @@ public class Demo03EntrySet {
         map.put("杨颖",168);
         map.put("林志玲",178);
         Set<Map.Entry<String, Integer>> set = map.entrySet();
-
         //使用迭代器遍历set集合
         Iterator<Map.Entry<String,Integer>> it=set.iterator();
         while (it.hasNext()){

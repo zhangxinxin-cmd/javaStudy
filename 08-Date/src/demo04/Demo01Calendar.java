@@ -12,6 +12,8 @@ public class Demo01Calendar {
     public static void main(String[] args) {
         Calendar calendar = Calendar.getInstance();//多态。
         System.out.println(calendar);
+        String string="ava";
+        System.out.println(string.charAt(0));
         System.out.println(calendar.getTime());
     }
 }

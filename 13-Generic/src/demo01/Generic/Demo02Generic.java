@@ -5,7 +5,7 @@ import java.util.Collection;
 
 /*
 泛型的上限限定：? extends E 代表使用的泛型只能是E类型的子类/本身
-泛型的下限限定：? extends E 代表使用的泛型只能是E类型的的父类/本身
+泛型的下限限定：? super E 代表使用的泛型只能是E类型的的父类/本身
  */
 public class Demo02Generic {
     public static void main(String[] args) {
@@ -31,10 +31,14 @@ public class Demo02Generic {
          */
 
     }
+
     // 泛型的上限：此时的泛型?，必须是Number类型或者Number类型的子类
-    public static void getElement1(Collection<? extends Number> coll){}
+    public static void getElement1(Collection<? extends Number> coll) {
+    }
+
     // 泛型的下限：此时的泛型?，必须是Number类型或者Number类型的父类
-    public static void getElement2(Collection<? super Number> coll){}
+    public static void getElement2(Collection<? super Number> coll) {
+    }
 
 }
 

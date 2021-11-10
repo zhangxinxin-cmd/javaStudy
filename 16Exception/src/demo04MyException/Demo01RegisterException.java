@@ -19,24 +19,25 @@ import java.util.Scanner;
  */
 public class Demo01RegisterException {
     //使用数组保存已经注册过的用户名（数据库）
-    private static String[] userNames={"张三","李四","王五"};
+    private static String[] userNames = {"张三", "李四", "王五"};
 
     public Demo01RegisterException() {
     }
+
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("请输入您要注册的用户名");
-        String userName=sc.next();
+        String userName = sc.next();
         checkUserName(userName);
     }
 
-    public static void checkUserName(String userName)  {
+    public static void checkUserName(String userName) {
         //遍历从存储已经注册过的用户名的数组，获取每一个用户名
         for (String name : userNames) {
-            if(name.equals(userName)){
+            if (name.equals(userName)) {
                 //true：用户名已经存在，抛出RegisterException异常，告知用户“亲，该用户名已经被注册”
                 try {
-                    throw  new RegisterException("亲，该用户名已经被注册");
+                    throw new RegisterException("亲，该用户名已经被注册");
                 } catch (RegisterException e) {
                     e.printStackTrace();
 //                    System.out.println(e.toString());

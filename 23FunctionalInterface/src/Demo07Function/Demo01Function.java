@@ -19,11 +19,15 @@ public class Demo01Function {
         Integer in = fun.apply(str);
         System.out.println(in);
     }
-
+    public static void change(String str){
+        Function<String,Integer> fun= (s)->Integer.parseInt(s);
+        System.out.println(fun.apply(str));
+    }
     public static void main(String[] args) {
         String s="12345";
         change(s,(R)->{
             return Integer.parseInt(R,10);
         });
+        change(s);
     }
 }

@@ -26,7 +26,7 @@ public class Demo01Arrays {
         System.out.println(Arrays.toString(array1));
         System.out.println("========");
 
-        String[] array2={"aa","bb","cc","dd"};
+        String[] array2={"aaa","bb","cc","dd"};
         Arrays.sort(array2);
         System.out.println(Arrays.toString(array2));
     }

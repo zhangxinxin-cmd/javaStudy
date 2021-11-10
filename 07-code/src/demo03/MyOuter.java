@@ -11,7 +11,7 @@ package demo03;
  */
 public class MyOuter {
     public void methodOuter() {
-        int num = 9;//所在方法的局部变量
+        final int num = 9;//所在方法的局部变量
 //        num=8;
         class MyInner {
             public void InnerMethod() {

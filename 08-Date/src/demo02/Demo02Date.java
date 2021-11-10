@@ -19,7 +19,7 @@ public class Demo02Date {
         System.out.println(date.getTime());
     }
 
-    private static void demo01(){
+    private static void demo01() {
         /*
         Date类的空参数构造方法。
         Date()获取当前系统的日期和时间。
@@ -28,12 +28,12 @@ public class Demo02Date {
         System.out.println(date);
     }
 
-    private static void demo02(){
+    private static void demo02() {
         /*
         Date类的带参数构造方法。
         Date(long date):传递毫秒值，把毫秒值转换为Date日期。
          */
-        Date date=new Date(0L);
+        Date date;
         date = new Date(System.currentTimeMillis());
         System.out.println(date);
         System.out.println(date.getTime());

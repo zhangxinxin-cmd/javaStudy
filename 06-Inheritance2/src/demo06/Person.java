@@ -1,4 +1,5 @@
 package demo06;
+
 /*
 对于成员变量来说，如果使用final关键字修饰，那么这个变量也照样是不可变。
 
@@ -10,7 +11,7 @@ public class Person {
     private final String name;
 
     public Person() {
-        name="关晓彤";
+        name = "关晓彤";
     }
 
     public Person(String name) {

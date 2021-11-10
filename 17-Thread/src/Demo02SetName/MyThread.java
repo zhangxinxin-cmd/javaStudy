@@ -1,4 +1,5 @@
 package Demo02SetName;
+
 /*
     设置线程的名称:(了解)
         1.使用Thread类中的方法setName(名字)
@@ -11,11 +12,11 @@ public class MyThread extends Thread {
     }
 
     public MyThread(String name) {
-        super(name);
+        super(name);//调用父类构造方法设置线程名字
     }
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName());
+        System.out.println(currentThread());
     }
 }

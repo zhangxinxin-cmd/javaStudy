@@ -1,4 +1,5 @@
 package demo04MyException;
+
 /*
 自定义异常类：
     java提供的异常类，不够我们使用，需要我们自己定义一些异常类
@@ -19,11 +20,12 @@ public class RegisterException extends RuntimeException {
 
     public RegisterException() {
     }
+
     /*
-    添加一个带异常欣喜的构造方法
+    添加一个带异常信息的构造方法
     查看源码发现，所有的异常类都会有一个带异常信息的构造方法，方法内部会调用父类异常信息的构造方法，让它来处理这个异常信息
      */
-    public RegisterException (String message){
+    public RegisterException(String message) {
         super(message);
     }
 }

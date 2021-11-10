@@ -37,7 +37,6 @@ public class Demo01List {
         //在c和d之间添加一个mm.
         list.add(3,"mm");
         System.out.println(list);//[a, b, c, mm, d]
-
         //public E remove(int index):移除列表中指定位置的元素，返回的是被移除的元素。
         //移除元素
         System.out.println("被移除的元素是："+list.remove(3));

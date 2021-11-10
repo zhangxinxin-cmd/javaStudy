@@ -16,15 +16,15 @@ import java.util.function.Predicate;
         Predicate接口中有一个方法and
  */
 public class Demo02Predicate_and {
-    public static boolean checkString(String str, Predicate<String> pr1,Predicate<String> pr2){
+    public static boolean checkString(String str, Predicate<String> pr1, Predicate<String> pr2) {
 //        return pr1.test(str)&&pr2.test(str);
         return pr1.and(pr2).test(str);
     }
 
     public static void main(String[] args) {
-        String str="abcdef";
+        String str = "abcdef";
         boolean b = checkString(str, s -> {
-            return s.length()>3;
+            return s.length() > 3;
         }, s -> {
             return s.contains("a");
         });

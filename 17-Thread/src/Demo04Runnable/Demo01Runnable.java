@@ -1,8 +1,5 @@
 package Demo04Runnable;
 
-import javax.swing.plaf.TableHeaderUI;
-import java.util.Random;
-
 /*
  创建多线程程序的第二种方式:实现Runnable接口
     java.lang.Runnable

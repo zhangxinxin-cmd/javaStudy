@@ -1,11 +1,5 @@
 package demo01Exception;
 
-import javafx.scene.chart.ScatterChart;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /*
 java.lang.Throwable:类是java语言中所有错误或异常的超类。
         Exception:编译器异常，进行编译（写代码）java程序出现的问题
@@ -26,10 +20,10 @@ public class Demo01Exception {
             System.out.println("后续代码。");
         }
         System.out.println(date);*/
-        int[] array={12,22,32};
-        try{
+        int[] array = {12, 22, 32};
+        try {
             System.out.println(array[3]);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
 

@@ -13,9 +13,7 @@ import java.util.stream.Stream;
 public class Demo04Stream_Map {
     public static void main(String[] args) {
         Stream<Integer> stream = Stream.of(2, 1, 32, 21, 12);
-        Stream<String> stream2 = stream.map((Integer i) -> {
-            return String.valueOf(i);
-        });
+        Stream<String> stream2 = stream.map((s)->String.valueOf(s));
         stream2.forEach((str)-> System.out.println(str));
     }
 }

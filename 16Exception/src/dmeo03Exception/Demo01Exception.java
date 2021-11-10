@@ -1,5 +1,7 @@
 package dmeo03Exception;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -27,9 +29,10 @@ public class Demo01Exception {
             System.out.println(e);
         }
         System.out.println("后续代码");*/
-        int[] array={2,1,32};
-        List<Integer> list=List.of(2,32,1,43,44);
-       // 2.多个异常一次捕获，多次处理。
+        Integer[] array={2,1,32};
+        List<Integer> list=new ArrayList<>();
+        Collections.addAll(list,array);
+        // 2.多个异常一次捕获，多次处理。
         try{
             System.out.println(array[3]);
             System.out.println(list.get(5));

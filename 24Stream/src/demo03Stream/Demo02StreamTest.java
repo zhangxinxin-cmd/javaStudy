@@ -1,6 +1,5 @@
 package demo03Stream;
 
-import java.awt.color.ProfileDataException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
@@ -17,6 +16,5 @@ public class Demo02StreamTest {
         Stream<Person> personStream = Stream.concat(oneStream, twoStream).map((name) -> new Person(name));
         ArrayList<Person> collect = personStream.collect(Collectors.toCollection(ArrayList::new));
         System.out.println(collect);
-
     }
 }

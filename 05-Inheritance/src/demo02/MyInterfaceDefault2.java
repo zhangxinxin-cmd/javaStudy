@@ -5,11 +5,11 @@ package demo02;
 * */
 public interface MyInterfaceDefault2 {
 //抽象方法
-    public abstract void methodAbs();
+    void methodAbs();
 //    新添加了一个抽象方法
 //    public abstract  void methodAbs2();//这样会报错
 //    新添加的方法改成默认方法。
-    public default void methodDefault(){
+    default void methodDefault(){
         System.out.println("这是新添加的默认方法。");
     };
 }

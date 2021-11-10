@@ -12,11 +12,10 @@ import java.util.stream.Stream;
  */
 public class Demo05Stream_Count {
     public static void main(String[] args) {
-        ArrayList<Integer> list=new ArrayList<>();
-        Collections.addAll(list,32,22,11,22,32);
+        ArrayList<Integer> list = new ArrayList<>();
+        Collections.addAll(list, 32, 22, 11, 22, 32);
         Stream<Integer> stream = list.stream();
         long count = stream.count();
         System.out.println(count);//5
-
     }
 }

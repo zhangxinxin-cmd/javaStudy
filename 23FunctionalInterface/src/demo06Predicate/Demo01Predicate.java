@@ -1,5 +1,11 @@
 package demo06Predicate;
 
+import javax.swing.*;
+import java.awt.*;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.Predicate;
 
 /*
@@ -16,21 +22,41 @@ public class Demo01Predicate {
     传递一个Predicate接口，泛型使用String
     使用Predicate中的方法test对字符串进行判断，并把判断的结果返回
      */
-    public static boolean checkString(String s, Predicate<String> pre){
+    public static boolean checkString(String s, Predicate<String> pre) {
         return pre.test(s);
     }
+
+    public static boolean checkString(String s) {
+        Predicate<String> predicate = (str) -> str.length() > 5;
+        return predicate.test(s);
+    }
+
     public static void main(String[] args) {
-        String s="abcdef";
+        String s = "abcdef";
         boolean b = checkString(s, str -> {
-                //对参数传递的字符串进行判断，判断字符串的长度是否大于5，并把判断结果返回
-            return str.length()>5;
+            //对参数传递的字符串进行判断，判断字符串的长度是否大于5，并把判断结果返回
+            return str.length() > 5;
         });
         System.out.println(b);
 
 
-        Predicate<String> predicate=(s1 -> s1.length()>4);
-        Predicate<String> predicate1=(s1 -> s1.length()<6);
+        Predicate<String> predicate = (s1 -> s1.length() > 4);
+        Predicate<String> predicate1 = (s1 -> s1.length() < 6);
         Predicate<String> and = predicate.and(predicate1);
-        System.out.println(and.test("hellrto"));
+        System.out.println(and.test("hello"));
+        System.out.println(checkString(s));
+        List<Integer> list = new ArrayList<>();
+        Collections.addAll(list, 2, 3, 12, 14, 10, 5, 7, 4);
+        list.removeIf((i) -> {
+            return i > 4;
+        });
+        System.out.println(list);
+        Timer timer=new Timer(1000,(event)->{
+            System.out.println("At the tone,the time is"+ Instant.ofEpochMilli(event.getWhen()));
+            Toolkit.getDefaultToolkit().beep();
+        });
+        timer.start();
+        JOptionPane.showMessageDialog(null,"quit?");
+        System.exit(0);
     }
 }
