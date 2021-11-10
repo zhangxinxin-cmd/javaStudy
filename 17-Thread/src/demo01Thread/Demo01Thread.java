@@ -1,4 +1,5 @@
 package demo01Thread;
+
 /*
 创建多线程的第一种模式：创建Thread类的子类
 java.lang.Thread类：是描述线程的类，我们想要实现多线程程序，就必须继承Thread类
@@ -13,13 +14,18 @@ java.lang.Thread类：是描述线程的类，我们想要实现多线程程序�
              多次启动一个线程是非法的。特别是当线程已经结束执行后，不能再重新启动。
     java程序属于抢占式调度,那个线程的优先级高,那个线程优先执行;同一个优先级,随机选择一个执行
  */
-public class Demo01Thread  {
+public class Demo01Thread {
     public static void main(String[] args) {
-        MyThread mt=new MyThread();
-        mt.start();
-//        mt.run();
+        MyThread mt = new MyThread();
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 20; i++) {
+                System.out.println(" run2:" + i);
+            }
+        });
+        mt.start();//开辟新的栈空间执行run方法
+        thread.start();//开辟新的栈空间执行run方法
         for (int i = 0; i < 20; i++) {
-            System.out.println("main:"+i);
+            System.out.println("main:" + i);
         }
     }
 }
