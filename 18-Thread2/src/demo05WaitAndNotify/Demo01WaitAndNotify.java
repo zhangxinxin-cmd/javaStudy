@@ -1,4 +1,5 @@
 package demo05WaitAndNotify;
+
 /*
 等待唤醒案例：线程之间的通信
     创建一个顾客线程（消费者）：告知老板要的包子种类和数量，调用Wait方法，放弃cpu的执行，进入到WAITING状态（无限等待）
@@ -16,36 +17,30 @@ package demo05WaitAndNotify;
  */
 public class Demo01WaitAndNotify {
     public static void main(String[] args) {
-        Object obj=new Object();
+        Object obj = new Object();
         //创建一个顾客线程(消费者)
-        new Thread(){
-            @Override
-            public void run() {
+        new Thread(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            synchronized (obj) {
+                System.out.println("老板5秒钟之后做好包子，告知顾客，可以吃包子了");
+                obj.notify();
+            }
+        }).start();
+
+        new Thread(() -> {
+            synchronized (obj) {
+                System.out.println("告知老板要的包子数量和种类");
                 try {
-                    sleep(5000);
+                    obj.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (obj){
-                    System.out.println("老板5秒钟之后做好包子，告知顾客，可以吃包子了");
-                    obj.notify();
-                }
+                System.out.println("包子已经好了。");
             }
-        }.start();
-
-        new Thread(){
-            @Override
-            public void run() {
-                synchronized (obj){
-                    System.out.println("告知老板要的包子数量和种类");
-                    try {
-                        obj.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("包子已经好了。");
-                }
-            }
-        }.start();
+        }).start();
     }
 }

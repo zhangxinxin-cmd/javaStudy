@@ -6,5 +6,5 @@ public class BaoZi {
     //馅
     String xian;
     //包子的状态
-    boolean flag=false;
+    boolean flag = false;
 }
