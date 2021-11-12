@@ -45,5 +45,6 @@ public class TCPClient {
         int len = is.read(bytes);
         System.out.println(new String(bytes, 0, len));
         socket.close();
+        socket.close();
     }
 }
