@@ -25,7 +25,7 @@ import java.net.Socket;
 public class TCPClient {
     public static void main(String[] args) throws IOException {
         FileInputStream fis=new FileInputStream("D:\\photo\\652e9e7d85a5739a234771e130920f36.jpg");
-        Socket socket=new Socket("127.0.0.1",8888);
+        Socket socket=new Socket("127.0.0.1",8080);
         OutputStream os = socket.getOutputStream();
         int len=0;
         byte[] bytes=new byte[1024];

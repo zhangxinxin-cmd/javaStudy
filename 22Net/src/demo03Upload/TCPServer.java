@@ -26,7 +26,7 @@ import java.util.Random;
  */
 public class TCPServer {
     public static void main(String[] args) throws IOException {
-            ServerSocket server=new ServerSocket(8888);
+            ServerSocket server=new ServerSocket(8080);
             /*让服务器一直处于监听状态（死循环accept方法）
                有一个客户端上传文件，就保存文件
             */

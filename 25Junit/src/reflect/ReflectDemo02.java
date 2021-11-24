@@ -1,9 +1,6 @@
 package reflect;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Collections;
 
 /*
 		class对象功能：
@@ -39,8 +36,9 @@ public class ReflectDemo02 {
         Field value1 = personClass.getField("a");
         //value1.setAccessible(true);
         System.out.println(value1);
-        Person p1=new Person();
-        value1.set(p1,"A");
+        Person p1 = new Person();
+        value1.set(p1, "A");
+        System.out.println("p1.a=" + p1.getA());
         Object value = value1.get(p1);
         System.out.println(value);
         System.out.println("===========");
@@ -50,7 +48,7 @@ public class ReflectDemo02 {
         }
         Field d = personClass.getDeclaredField("d");
         d.setAccessible(true);//暴力反射
-        d.set(p1,"B");
+        d.set(p1, "B");
         System.out.println(d.get(p1));
         System.out.println("==========");
 

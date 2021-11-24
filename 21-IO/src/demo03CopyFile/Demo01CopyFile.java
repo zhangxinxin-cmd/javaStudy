@@ -6,7 +6,7 @@ public class Demo01CopyFile {
     public static void main(String[] args) throws IOException {
         //method1("D:\\photo\\ccc79ab72ab94cf067917a4a83766ae2.jpg","D:\\photo\\copy.jpg",1482752);
         //method2("D:\\photo\\ccc79ab72ab94cf067917a4a83766ae2.jpg","D:\\photo\\copy.jpg",1482752);
-        method3("D:\\\\photo\\\\ccc79ab72ab94cf067917a4a83766ae2.jpg","D:\\\\photo\\\\copy.jpg");
+        method3("D:\\photo\\ccc79ab72ab94cf067917a4a83766ae2.jpg","D:\\photo\\copy.jpg");
     }
 
     public static void method2(String name,String target,int size) throws IOException{

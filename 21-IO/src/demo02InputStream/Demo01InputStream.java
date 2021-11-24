@@ -1,10 +1,8 @@
 package demo02InputStream;
 
-import javax.xml.transform.Source;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.SQLOutput;
 
 /*
     java.io.InputStream:字节输入流
@@ -39,8 +37,9 @@ import java.sql.SQLOutput;
  */
 public class Demo01InputStream {
     public static void main(String[] args) throws IOException {
-        File file=new File("D:\\idealProjects\\basic-code\\21-IO\\a.txt");
-        FileInputStream fis=new FileInputStream(file);
+        File file = new File("D:\\idealProjects\\basic-code\\21-IO\\a.txt");
+        boolean newFile = file.createNewFile();
+        FileInputStream fis = new FileInputStream(file);
         /*int read = fis.read();
         System.out.println(read);
         System.out.println(fis.read());
@@ -56,8 +55,8 @@ public class Demo01InputStream {
        2.len=fis.read():把读取到的字节赋值给变量len
        3.(len=fis.read()!=-1:判断len是否等于-1
          */
-        int len=0;
-        while ((len = fis.read())!=-1){
+        int len = 0;
+        while ((len = fis.read()) != -1) {
             System.out.println((char) len);
         }
         fis.close();

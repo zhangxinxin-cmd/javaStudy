@@ -1,7 +1,7 @@
 package demo01;
 
 import java.io.File;
-import java.lang.reflect.Field;
+import java.io.IOException;
 
 /*
     路径:
@@ -19,7 +19,7 @@ import java.lang.reflect.Field;
             2.路径中的文件名称分隔符windows使用反斜杠,反斜杠是转义字符,两个反斜杠代表一个普通的反斜杠
  */
 public class Demo02File {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //File类的构造方法
 //        show01();
         //show02("c:","123.txt");
@@ -35,14 +35,14 @@ public class Demo02File {
              父路径和子路径,可以单独书写,使用起来非常灵活;父路径和子路径都可以变化
              父路径是File类型,可以使用File的方法对路径进行一些操作,再使用路径创建对象
      */
-    private static void show03() {
-        File parent=new File("c:\\");
-        File file=new File(parent,"hello.java");
+    private static void show03() throws IOException {
+        File parent = new File("c:\\");
+        File file = new File(parent, "hello.java");
         System.out.println(file);
     }
 
     private static void show02(String parent, String child) {
-        File file=new File(parent,child);
+        File file = new File(parent, child);
         System.out.println(file);
     }
     /*
@@ -64,13 +64,13 @@ public class Demo02File {
             创建File对象,只是把字符串路径封装为File对象,不考虑路径的真假情况
      */
     private static void show01() {
-        File f1=new File("D:\\idealProjects\\basic-code\\20-File\\123.txt");
+        File f1 = new File("D:\\idealProjects\\basic-code\\20-File\\123.txt");
         System.out.println(f1);//重写了Object类的toString方法
 
-        File f2=new File("D:\\idealProjects\\basic-code\\20-File");
+        File f2 = new File("D:\\idealProjects\\basic-code\\20-File");
         System.out.println(f2);
 
-        File f3=new File("123.txt");
+        File f3 = new File("123.txt");
         System.out.println(f3);
 
     }

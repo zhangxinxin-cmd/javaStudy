@@ -8,7 +8,7 @@ public class ReflectDemo1 {
 		3. 对象.getClass():getClass( )方法在Object类中定义。
      */
     public static void main(String[] args) throws ClassNotFoundException {
-        Class cls1 = Class.forName("reflect.Person");
+        Class<?> cls1 = Class.forName("reflect.Person");
         System.out.println(cls1);
         Class<Person> cls2 = Person.class;
         System.out.println(cls2);
